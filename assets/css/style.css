@@ -122,7 +122,7 @@ h6 {
 
 
 
-/*Button design*/
+/*High light Button design*/
 
 a button{
   position: relative;
@@ -141,6 +141,9 @@ a button{
 a button:hover{
   background: linear-gradient(90deg,#755bae,#ff72c0);
 }
+
+/*High light Button design Ends*/
+
 /*New Section*/
 
 #new .one img{
