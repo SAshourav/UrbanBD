@@ -278,3 +278,43 @@ hr{
 #banner button:hover{
   background: linear-gradient(90deg,#755bae,#ff72c0);
 } 
+
+footer{
+  background-color: #222222;
+}
+footer h5{
+  color: #d8d8d8;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+footer li{
+  padding-bottom: 4px;
+}
+footer li a{
+  font-size: 1.3rem;
+  color: #999;
+  text-decoration: none;
+}
+footer li a:hover{
+  color: #d8d8d8;
+}
+footer .copyright a{
+  color: #000;
+  height: 40px;
+  width: 40px;
+  background-color: #fff;
+  display: inline-block;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  margin: 0 5px;
+}
+footer .copyright a:hover{
+  color: #fff;
+  background-color: orange;
+}
+footer p{
+  color: white;
+ font-size: 1rem;
+}
