@@ -25,7 +25,7 @@
 
     <nav class="navbar navbar-expand-lg py-3 bg-white fixed-top">
       <div class="container-fluid">
-        <img class="logo" src="assets/imgs/logo.png" alt="">
+        <img class="logo" src="assets/imgs/logo.png" alt="" />
         <h2 class="brand">The Urban Shop</h2>
         <button
           class="navbar-toggler"
@@ -38,7 +38,10 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+        <div
+          class="collapse navbar-collapse nav-buttons"
+          id="navbarSupportedContent"
+        >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
@@ -60,8 +63,6 @@
               <i class="fas fa-shopping-bag"></i>
               <i class="fas fa-user"></i>
             </li>
-
- 
           </ul>
         </div>
       </div>
@@ -70,180 +71,228 @@
     <!--Single Product-->
 
     <section class="container single-product my-5 pt-5">
-        <div class="row mt-5">
-            <div class="col-lg-5 col-md-6 col-sm-12">
-                <img class="img-fluid w-100 pb-1" src="assets/imgs/Featured1.jpg" alt="">
-                <div class="small-img-group">
-                    <div class="small-img-col">
-                        <img src="assets/imgs/Featured2.jpg" width="100%" class="small-img" alt="">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="assets/imgs/Featured3.jpg" width="100%" class="small-img" alt="">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="assets/imgs/Featured4.jpg" width="100%" class="small-img" alt="">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="assets/imgs/cloth1.jpg" width="100%" class="small-img" alt="">
-                    </div>
-                </div>
+      <div class="row mt-5">
+        <div class="col-lg-5 col-md-6 col-sm-12">
+          <img
+            class="img-fluid w-100 pb-1"
+            src="assets/imgs/Featured1.jpg"
+            alt="" id="mainImg"
+          />
+          <div class="small-img-group">
+            <div class="small-img-col">
+              <img
+                src="assets/imgs/Featured2.jpg"
+                width="100%"
+                class="small-img"
+              />
             </div>
-
-            <div class="col-lg-6 col-md-12 col-12">
-                <h6>Men Shoes</h6>
-                <h3 class="py-4">Men's Fashion Category</h3>
-                <h2>2000Tk</h2>
-                <input type="number" value="1"/>
-                <button class="buy-btn">Add To Cart</button>
-                <h4 class="mt-5 mb-5">Product Details</h4>
-                <span>
-                    The details of this product will go down here.
-                    The details of this product will go down here.
-                    The details of this product will go down here.
-                    The details of this product will go down here.
-                    The details of this product will go down here.
-                </span>
+            <div class="small-img-col">
+              <img
+                src="assets/imgs/Featured3.jpg"
+                width="100%"
+                class="small-img"
+              />
             </div>
+            <div class="small-img-col">
+              <img
+                src="assets/imgs/Featured4.jpg"
+                width="100%"
+                class="small-img"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="assets/imgs/cloth1.jpg"
+                width="100%"
+                class="small-img"
+              />
+            </div>
+          </div>
         </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <h6>Men Shoes</h6>
+          <h3 class="py-4">Men's Fashion Category</h3>
+          <h2>2000Tk</h2>
+          <input type="number" value="1" />
+          <button class="buy-btn">Add To Cart</button>
+          <h4 class="mt-5 mb-5">Product Details</h4>
+          <span>
+            The details of this product will go down here. The details of this
+            product will go down here. The details of this product will go down
+            here. The details of this product will go down here. The details of
+            this product will go down here.
+          </span>
+        </div>
+      </div>
     </section>
 
     <!--Related Product-->
     <section id="related-products" class="my-5 pb-5">
-        <div class="container text-center mt-5 py-5">
-          <h3>Related Products</h3>
-          <hr class="mx-auto">
+      <div class="container text-center mt-5 py-5">
+        <h3>Related Products</h3>
+        <hr class="mx-auto" />
+      </div>
+      <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img
+            class="img-fluid mb-3"
+            src="assets/imgs/Featured1.jpg"
+            id="mainImg"
+          />
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h5 class="p-name">Sports Shoes</h5>
+          <h4 class="p-price">$199.8</h4>
+          <button class="buy-btn">Buy Now</button>
         </div>
-        <div class="row mx-auto container-fluid">
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Featured1.jpg"/>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">$199.8</h4>
-            <button class="buy-btn">Buy Now</button>
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid mb-3" src="assets/imgs/Featured2.jpg" />
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
           </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Featured2.jpg"/>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">$199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Featured3.jpg"/>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">$199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Featured4.jpg"/>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">$199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+          <h5 class="p-name">Sports Shoes</h5>
+          <h4 class="p-price">$199.8</h4>
+          <button class="buy-btn">Buy Now</button>
         </div>
-      </section>
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid mb-3" src="assets/imgs/Featured3.jpg" />
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h5 class="p-name">Sports Shoes</h5>
+          <h4 class="p-price">$199.8</h4>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid mb-3" src="assets/imgs/Featured4.jpg" />
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h5 class="p-name">Sports Shoes</h5>
+          <h4 class="p-price">$199.8</h4>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </section>
 
     <!--Footer-->
 
     <footer class="mt-5 py-5">
-        <div class="row container mx-auto pt-5">
-         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-           <img class="logo" src="assets/imgs/logo.png"/>
-           <p class="pt-3">We provide the best products for the most affordable prices</p>
-         </div>
-         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-           <h5 class="pb-2">Featured</h5>
-           <ul class="text-uppercase">
-             <li><a href="#">men</a></li>
-             <li><a href="#">women</a></li>
-             <li><a href="#">boys</a></li>
-             <li><a href="#">girls</a></li>
-             <li><a href="#">new arrivals</a></li>
-             <li><a href="#">clothes</a></li>
-           </ul>
-         </div>
- 
-         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-           <h5 class="pb-2">Contact Us</h5>
-           <div>
-             <h6 class="text-uppercase">Address</h6>
-             <p>Basundhara R/A , Dhaka</p>
-           </div>
-           <div>
-             <h6 class="text-uppercase">Phone</h6>
-             <p>123 456 789</p>
-           </div>
-           <div>
-             <h6 class="text-uppercase">Email</h6>
-             <p>sabbir.ahmed5@northsouth.edu</p>
-             <p>sajid.mahmud7@northsouth.edu</p>
-           </div>
-         </div>
-         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-           <h5 class="pb-2">Instagram</h5>
-           <div class="row">
-             <img src="assets/imgs/instagram/bag.jpg" class="img-fluid w-25 h-100 m-2"/>
-             <img src="assets/imgs/instagram/jacket.jpg" class="img-fluid w-25 h-100 m-2"/>
-             <img src="assets/imgs/instagram/shoe.jpg" class="img-fluid w-25 h-100 m-2"/>
-             <img src="assets/imgs/Featured1.jpg" class="img-fluid w-25 h-100 m-2"/>
-             <img src="assets/imgs/Featured2.jpg" class="img-fluid w-25 h-100 m-2"/>
-           </div>
-         </div>
+      <div class="row container mx-auto pt-5">
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <img class="logo" src="assets/imgs/logo.png" />
+          <p class="pt-3">
+            We provide the best products for the most affordable prices
+          </p>
         </div>
- 
- 
-         <div class="copyright mt-5">
-           <div class="row container mx-auto">
-             <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
-              <img src="assets/imgs/payment.jpg"/> 
-             </div>
-             <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
-                <p>eCommerce @ 2030 All Right Reserved</p>
-              </div>
-              <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
-               <a href="#"><i class="fab fa-facebook"></i></a>
-               <a href="#"><i class="fab fa-instagram"></i></a>
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-snapchat"></i></a>
-              </div>
-           </div>
-         </div>
- 
-      </footer>
- 
- 
-     <!-- JavaScript Bundle with Popper -->
-     <script
-       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-       crossorigin="anonymous"
-     ></script>
-   </body>
- </html>
- 
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Featured</h5>
+          <ul class="text-uppercase">
+            <li><a href="#">men</a></li>
+            <li><a href="#">women</a></li>
+            <li><a href="#">boys</a></li>
+            <li><a href="#">girls</a></li>
+            <li><a href="#">new arrivals</a></li>
+            <li><a href="#">clothes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Contact Us</h5>
+          <div>
+            <h6 class="text-uppercase">Address</h6>
+            <p>Basundhara R/A , Dhaka</p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Phone</h6>
+            <p>123 456 789</p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Email</h6>
+            <p>sabbir.ahmed5@northsouth.edu</p>
+            <p>sajid.mahmud7@northsouth.edu</p>
+          </div>
+        </div>
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Instagram</h5>
+          <div class="row">
+            <img
+              src="assets/imgs/instagram/bag.jpg"
+              class="img-fluid w-25 h-100 m-2"
+            />
+            <img
+              src="assets/imgs/instagram/jacket.jpg"
+              class="img-fluid w-25 h-100 m-2"
+            />
+            <img
+              src="assets/imgs/instagram/shoe.jpg"
+              class="img-fluid w-25 h-100 m-2"
+            />
+            <img
+              src="assets/imgs/Featured1.jpg"
+              class="img-fluid w-25 h-100 m-2"
+            />
+            <img
+              src="assets/imgs/Featured2.jpg"
+              class="img-fluid w-25 h-100 m-2"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright mt-5">
+        <div class="row container mx-auto">
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <img src="assets/imgs/payment.jpg" />
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
+            <p>eCommerce @ 2030 All Right Reserved</p>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var mainImg = document.getElementById("mainImg"); //getting the main Image
+      var smallImg = document.getElementsByClassName("small-img"); //getting small img by class name
+      for(let i=0; i<4; i++){
+        smallImg[i].onclick = function(){
+          mainImg.src = smallImg[i].src;
+        }
+      }
+    
+    </script>
+
+  </body>
+</html>
