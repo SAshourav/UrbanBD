@@ -566,3 +566,9 @@ th:last-child{
   color: #fff;
   background-color: #fb774b;
 }
+
+/* Contact */
+
+#contact span{
+  color: #fb774b;
+}
