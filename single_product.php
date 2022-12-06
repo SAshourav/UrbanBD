@@ -1,3 +1,26 @@
+<?php
+
+include("server/connection.php");
+
+if(isset($_GET['product_id'])){
+
+  $product_id = $_GET['product_id'];
+
+    $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ?");
+    $stmt->bind_param("i", $product_id);
+
+    $stmt->execute();
+
+    $product = $stmt->get_result();  //array
+
+  //No product id was given
+}else{
+  header('location: index.php');
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,7 +64,7 @@
         <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
 
             <li class="nav-item">
@@ -71,37 +94,40 @@
 
     <section class="container single-product my-5 pt-5">
       <div class="row mt-5">
+
+      <?php while($row = $product->fetch_assoc()) {?>
+
         <div class="col-lg-5 col-md-6 col-sm-12">
           <img
             class="img-fluid w-100 pb-1"
-            src="assets/imgs/Featured1.jpg"
+            src="assets/imgs/<?php echo $row['product_image']; ?>"
             alt="" id="mainImg"
           />
           <div class="small-img-group">
             <div class="small-img-col">
               <img
-                src="assets/imgs/Featured2.jpg"
+                src="assets/imgs/<?php echo $row['product_image']; ?>"
                 width="100%"
                 class="small-img"
               />
             </div>
             <div class="small-img-col">
               <img
-                src="assets/imgs/Featured3.jpg"
+                src="assets/imgs/<?php echo $row['product_image2']; ?>"
                 width="100%"
                 class="small-img"
               />
             </div>
             <div class="small-img-col">
               <img
-                src="assets/imgs/Featured4.jpg"
+                src="assets/imgs/<?php echo $row['product_image3']; ?>"
                 width="100%"
                 class="small-img"
               />
             </div>
             <div class="small-img-col">
               <img
-                src="assets/imgs/cloth1.jpg"
+                src="assets/imgs/<?php echo $row['product_image4']; ?>"
                 width="100%"
                 class="small-img"
               />
@@ -111,18 +137,18 @@
 
         <div class="col-lg-6 col-md-12 col-12">
           <h6>Men Shoes</h6>
-          <h3 class="py-4">Men's Fashion Category</h3>
-          <h2>2000Tk</h2>
+          <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
+          <h2><?php echo $row['product_price']; ?></h2>
           <input type="number" value="1" />
           <button class="buy-btn">Add To Cart</button>
           <h4 class="mt-5 mb-5">Product Details</h4>
           <span>
-            The details of this product will go down here. The details of this
-            product will go down here. The details of this product will go down
-            here. The details of this product will go down here. The details of
-            this product will go down here.
+          <?php echo $row['product_description']; ?>
           </span>
         </div>
+
+        <?php } ?>
+
       </div>
     </section>
 

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 
 .nav-buttons {
-  margin-left: 50%;
+  margin-left: 65%;
 }
 
 * {
@@ -39,7 +39,7 @@ h6 {
   color: #d8d8d8;
 }
 .navbar {
-  font-size: 16px;
+  font-size: 20px;
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
   top: 0;
@@ -211,6 +211,7 @@ a button:hover{
 }
 .product img{
   transition: 0.32 all;
+  aspect-ratio: 3 / 2;
 }
 .product:hover img{
   opacity: 0.7
