@@ -24,7 +24,6 @@ if(isset($_POST['add_to_cart'])){
       }else{
 
           echo '<script> alert("Product was already added!!!"); </script>' ;
-          echo '<script> window.location = "index.php"; </script>';
         }
       }
     //if this is the first product
@@ -142,20 +141,25 @@ if(isset($_POST['add_to_cart'])){
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
+
+
+            <?php foreach($_SESSION['cart'] as $key => $value){ ?>
+
+
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/Featured1.jpg">
+                        <img src="assets/imgs/<?php echo $value['product_image']; ?>">
                         <div>
-                            <p>White Shoe</p>
-                            <small><span>Tk</span>2000</small>
+                            <p><?php echo $value['product_name']; ?></p>
+                            <small><span>Tk</span><?php echo $value['product_price']; ?></small>
                             <br>
                             <a href="#" class="remove-btn">Remove</a>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <input type="number" value="1" />
+                    <input type="number" value="<?php echo $value['product_quantity']; ?>" />
                     <a class="edit-btn" href="#">Edit</a>
                 </td>
                 <td>
@@ -164,49 +168,8 @@ if(isset($_POST['add_to_cart'])){
                 </td>
             </tr>
 
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/Featured1.jpg">
-                        <div>
-                            <p>White Shoe</p>
-                            <small><span>Tk</span>2000</small>
-                            <br>
-                            <a href="#" class="remove-btn">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <input type="number" value="1" />
-                    <a class="edit-btn" href="#">Edit</a>
-                </td>
-                <td>
-                    <span>Tk</span>
-                    <span class="product-price">2000</span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/Featured1.jpg">
-                        <div>
-                            <p>White Shoe</p>
-                            <small><span>Tk</span>2000</small>
-                            <br>
-                            <a href="#" class="remove-btn">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <input type="number" value="1" />
-                    <a class="edit-btn" href="#">Edit</a>
-                </td>
-                <td>
-                    <span>Tk</span>
-                    <span class="product-price">2000</span>
-                </td>
-            </tr>
+            <?php } ?>
+         
         </table>
         
         <div class="cart-total">
