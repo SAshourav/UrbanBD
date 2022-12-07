@@ -10,6 +10,8 @@ if(isset($_POST['add_to_cart'])){
     //if product has already been added to the cart or not
       if( ! in_array($_POST['product_id'], $products_array_ids ) ){
 
+        $product_id = $_POST['product_id'];
+
         $product_array = array(
             'product_id' => $_POST['product_id'],
             'product_name' => $_POST['product_name'],
@@ -45,17 +47,20 @@ if(isset($_POST['add_to_cart'])){
 
     $_SESSION['cart'][$product_id] = $product_array;
   }
+
+  //remove product from the cart
+}else if(isset($_POST['remove_product'])){
+  $product_id = $_POST['product_id'];
+  unset($_SESSION['cart'][$product_id]);
 }else{
   header('location: index.php');
 }
 
 
 
-
-
-
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -154,7 +159,11 @@ if(isset($_POST['add_to_cart'])){
                             <p><?php echo $value['product_name']; ?></p>
                             <small><span>Tk</span><?php echo $value['product_price']; ?></small>
                             <br>
-                            <a href="#" class="remove-btn">Remove</a>
+                            <form method="POST" action="cart.php">
+                              <input type="hidden" name="product_id" value="<?php echo $value['product_id'] ?>" />
+                              <input type="submit" name="remove_product" class="remove-btn" value="remove" />
+                            </form>
+                            
                         </div>
                     </div>
                 </td>
