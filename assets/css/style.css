@@ -417,6 +417,9 @@ footer .copyright img{
   color: #fb774b;
   text-decoration: none;
   font-size: 14px;
+  background-color: #fff;
+  border: none;
+  
 }
 .cart .product-info p{
   margin: 3px;
