@@ -48,10 +48,19 @@ if(isset($_POST['add_to_cart'])){
     $_SESSION['cart'][$product_id] = $product_array;
   }
 
+//calculate total
+  calculateTotalCart();
+
+
+
+
   //remove product from the cart
 }else if(isset($_POST['remove_product'])){
   $product_id = $_POST['product_id'];
   unset($_SESSION['cart'][$product_id]);
+
+  //calculate total
+  calculateTotalCart();
 
 }else if(isset($_POST['edit_quantity']) ){
 
@@ -65,8 +74,11 @@ if(isset($_POST['add_to_cart'])){
 //update product quantity
   $product_array['product_quantity'] = $product_quantity;
 
-//return array back its place
+//return array back its place 
   $_SESSION['cart'][$product_id] = $product_array;
+
+  //calculate total
+  calculateTotalCart();
 
 
 }else{
@@ -74,6 +86,22 @@ if(isset($_POST['add_to_cart'])){
 }
 
 
+function calculateTotalCart(){
+
+  $total = 0;
+
+  foreach($_SESSION['cart'] as $key => $value){
+
+    $product = $_SESSION['cart'][$key];
+
+    $price = $product['product_price'];
+    $quantity = $product['product_quantity'];
+
+    $total = $total + ($price * $quantity);
+
+  }
+  $_SESSION['total'] = $total;
+}
 
 ?>
 
@@ -195,7 +223,7 @@ if(isset($_POST['add_to_cart'])){
                 </td>
                 <td>
                     <span>Tk</span>
-                    <span class="product-price">2000</span>
+                    <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
                 </td>
             </tr>
 
@@ -205,13 +233,13 @@ if(isset($_POST['add_to_cart'])){
         
         <div class="cart-total">
             <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>Tk 2000</td>
-                </tr>
+                  <!--<tr>
+                      <td>Subtotal</td>
+                      <td>Tk 2000</td>
+                  </tr>-->
                 <tr>
                     <td>Total</td>
-                    <td>Tk 2000</td>
+                    <td>Tk <?php echo $_SESSION['total']; ?></td>
                 </tr>
                 
             </table>
