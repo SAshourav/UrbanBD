@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+if(!empty($_SESSION['cart']) && isset($_POST['checkout'])){
+//let user in
+  
+}else{
+
+  header('location: index.php');
+//send user home
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -77,7 +95,7 @@
             <hr class="mx-auto">
         </div>
         <div class="mx-auto container">
-            <form action="" id="checkout-form">
+            <form action="place_order.php" method="POST" id="checkout-form">
                 <div class="form-group checkout-small-element">
                     <label>Name</label>
                     <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Name" required/>
@@ -99,7 +117,8 @@
                     <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Address" required/>
                 </div>
                 <div class="form-group checkout-btn-container">
-                    <input type="submit" class="btn" id="checkout-btn" value="Checkout"/>
+                    <p>Total amount : Tk <?php echo $_SESSION['total']; ?></p>
+                    <input type="submit" class="btn" id="checkout-btn" name="place_order" value="Place Order"/>
                 </div>
                 
             </form>
