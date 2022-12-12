@@ -17,6 +17,7 @@ if(isset($_POST['place_order'])){
     $user_id = 1;
     $order_date = date("Y-m-d H:i:s");
 
+    //store order info in the database
 
     $stmt = $conn->prepare("INSERT INTO orders(order_cost, order_status, user_id, user_phone,user_city, user_address,order_date)
                     VALUES (?,?,?,?,?,?,?); ");
@@ -25,10 +26,10 @@ if(isset($_POST['place_order'])){
 
     $stmt->execute();
 
+    //issue new order 
 
     $order_id = $stmt->insert_id;
 
-    echo $order_id;
 
     //get product from the cart (From the session)
 
@@ -41,6 +42,7 @@ if(isset($_POST['place_order'])){
         $product_price = $product['product_price'];
         $product_quantity = $product['product_quantity'];
 
+        //store each single item in the order_items database
 
         $stmt1 = $conn->prepare("INSERT INTO order_items (order_id, product_id, product_name, product_image,product_price,product_quantity,user_id,order_date)
                             VALUES(?,?,?,?,?,?,?,?)");
@@ -50,16 +52,15 @@ if(isset($_POST['place_order'])){
         $stmt1->execute();
     }
 
-    //issue new order and store order info in the database
+
+    //remove everything from the cart --> delay unit payment is done
+    //unset($_SESSION['cart']);
 
 
-    //store each single item in the order_items database
-
-
-    //remove everything from the cart
 
 
     //inform user whether everything is fine or there is a problem
+    header('location: ../payment.php?order_status=order placed successfully');
 }
 
 
