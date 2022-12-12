@@ -18,7 +18,7 @@ if(isset($_POST['place_order'])){
     $order_date = date("Y-m-d H:i:s");
 
 
-    $stmt = conn->prepare("INSERT INTO orders(order_cost, order_status, user_id, user_phone,user_city, user_address,order_date)
+    $stmt = $conn->prepare("INSERT INTO orders(order_cost, order_status, user_id, user_phone,user_city, user_address,order_date)
                     VALUES (?,?,?,?,?,?,?); ");
 
     $stmt->bind_param('isiisss',$order_cost,$order_status,$user_id,$phone,$city,$address,$order_date);
@@ -26,7 +26,7 @@ if(isset($_POST['place_order'])){
     $stmt->execute();
 
 
-    $order_id = $stmt->insert_it;
+    $order_id = $stmt->insert_id;
 
     echo $order_id;
 
