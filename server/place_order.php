@@ -14,7 +14,7 @@ if(isset($_POST['place_order'])){
     $address = $_POST['address'];
     $order_cost = $_SESSION['total'];
     $order_status = "on_hold";
-    $user_id = 1;
+    $user_id = $_SESSION['user_id'];
     $order_date = date("Y-m-d H:i:s");
 
     //store order info in the database
