@@ -33,7 +33,7 @@ if(isset($_POST['login_btn'])){
       header('location:account.php?login_success= Logged in Successfully');
 
     }else{
-      header('location:login.php?= Could not verify your account');
+      header('location:login.php?error= Could not verify your account');
     }
   }else{
     //error message
