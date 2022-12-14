@@ -47,7 +47,14 @@ if(isset($_POST['change_password'])){
     
 }
 
-
+//Get Orders
+if(isset($_SESSION['logged_in'])){
+  $user_id = $_SESSION['user_id'];
+  $stmt = $conn->prepare("SELECT * FROM orders WHERE user_id=? ");
+  $stmt->bind_param('i',$user_id);
+  $stmt->execute();
+  $orders = $stmt->get_result();
+}
 
 ?>
 
@@ -176,22 +183,33 @@ if(isset($_POST['change_password'])){
 
       <table class="mt-5 pt-5">
           <tr>
-              <th>Product</th>
-              <th>Date</th>
+              <th>Order Id</th>
+              <th>Order cost</th>
+              <th>Order status</th>
+              <th>Order date</th>
           </tr>
-          <tr>
-              <td>
-                  <div class="product-info">
-                    <img src="assets/imgs/Featured1.jpg">
-                    <div>
-                      <p class="mt-3">White Shoe</p>
-                    </div>
-                  </div>
-              </td>
-              <td>
-                  <span>2022-12-15</span>
-              </td>
-          </tr>     
+          <?php while($row = $orders->fetch_assoc() ){ ?>
+                  <tr>
+                      <td>
+                          <div class="product-info">
+                           <!-- <img src="assets/imgs/Featured1.jpg">-->
+                            <div>
+                              <p class="mt-3"><?php echo $row['order_id']; ?></p>
+                            </div>
+                          </div>
+                      </td>
+                      <td>
+                        <span><?php echo $row['order_cost']; ?></span>
+                      </td>
+                      <td>
+                        <span><?php echo $row['order_status']; ?></span>
+                      </td>          
+                      <td>
+                        <span><?php echo $row['order_date']; ?></span>
+                      </td>
+                  </tr>    
+                  
+                <?php } ?>  
       </table>
       
 
