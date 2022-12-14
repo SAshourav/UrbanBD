@@ -131,6 +131,8 @@ if(isset($_POST['change_password'])){
     <section class="my-5 py-5">
        <div class="row container mx-auto">
         <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
+        <p class="text-center" style="color:green"><?php if(isset($_GET['register_success'])){echo $_GET['register_success']; }?></p>
+        <p class="text-center" style="color:green"><?php if(isset($_GET['login_success'])){echo $_GET['login_success']; }?></p>
           <h3 class="font-weight-bold">Account info</h3>
           <hr class="mx-auto">  
           <div class="account-info">

@@ -25,7 +25,7 @@ if(isset($_POST['register'])){
           //if password size is less than 6
   }else if(strlen($password) < 6){
     header('location: register.php?error=password must be at least 6 characters');
-    
+
           //if there is no error
   }else{
       //check wether there is a user with this email or not
@@ -53,7 +53,7 @@ if(isset($_POST['register'])){
               $_SESSION['user_email'] = $email;
               $_SESSION['user_name'] = $name;
               $_SESSION['logged_in'] = true;
-              header('location: account.php?register= You registered successfully');
+              header('location: account.php?register_success= You registered successfully');
 
               //if account was not created successfully
           }else{
