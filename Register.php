@@ -21,9 +21,11 @@ if(isset($_POST['register'])){
   //if password do not match
   if($password != $confirmPassword){
     header('location: register.php?error=password did not match');
+
           //if password size is less than 6
   }else if(strlen($password) < 6){
     header('location: register.php?error=password must be at least 6 characters');
+    
           //if there is no error
   }else{
       //check wether there is a user with this email or not
