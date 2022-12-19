@@ -225,6 +225,15 @@ a button:hover{
   color: white;
   padding: 0.3rem;
 }
+
+.shop-buy-btn{
+  background: linear-gradient(90deg,#0162c8,#55e7fc);
+  opacity: 1;
+  color: white;
+  padding: 0.3rem;
+  text-decoration: none;
+}
+
 .product:hover .buy-btn{
   transform: translateY(0px);
   opacity: 1;
