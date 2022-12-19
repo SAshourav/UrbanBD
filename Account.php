@@ -187,16 +187,18 @@ if(isset($_SESSION['logged_in'])){
               <th>Order cost</th>
               <th>Order status</th>
               <th>Order date</th>
+              <th>order details</th>
           </tr>
           <?php while($row = $orders->fetch_assoc() ){ ?>
                   <tr>
                       <td>
-                          <div class="product-info">
-                           <!-- <img src="assets/imgs/Featured1.jpg">-->
+                          <!-- <div class="product-info">
+                           <img src="assets/imgs/Featured1.jpg">
                             <div>
                               <p class="mt-3"><?php echo $row['order_id']; ?></p>
                             </div>
-                          </div>
+                          </div> -->
+                          <span><?php echo $row['order_id']; ?></span>
                       </td>
                       <td>
                         <span><?php echo $row['order_cost']; ?></span>
@@ -207,6 +209,13 @@ if(isset($_SESSION['logged_in'])){
                       <td>
                         <span><?php echo $row['order_date']; ?></span>
                       </td>
+                      
+                      <td>
+                        <form>
+                          <input class="btn order-details-btn" type="submit" value="details"/>
+                        </form>
+                      </td>
+
                   </tr>    
                   
                 <?php } ?>  
