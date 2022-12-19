@@ -102,6 +102,65 @@ $products = $stmt->get_result();  //array
         <!--Shop-->
 
         <!-- Search Section-->
+        <section id="search" class="my-5 py-5 ms-2">
+          <div class="container mt-5 py-5 ms-2">
+            <p>Search Product</p>
+            <hr>
+          </div>
+
+            <form>
+              <div class="row mx-auto container">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                  <p>Category</p>
+                    <div class="form-check">
+                      <input class="form-check-output" type="radio" name="category" id="category-one">
+                      <label class="form-check-label" for="flexRedioDefault1">
+                        Shoes
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-output" type="radio" name="category" id="category-one">
+                      <label class="form-check-label" for="flexRedioDefault2">
+                        Coats
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-output" type="radio" name="category" id="category-one">
+                      <label class="form-check-label" for="flexRedioDefault3">
+                        Watches
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-output" type="radio" name="category" id="category-one">
+                      <label class="form-check-label" for="flexRedioDefault4">
+                        Bags
+                      </label>
+                    </div>
+
+                </div>
+              </div>
+
+              <div class="row mx-auto container mt-5">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <p>Price</p>
+                  <input type="range" class="form-range w-50" min="1" max="1000" id="customRange2">
+                  <div class="w-50">
+                    <span style="float: left;">1</span>
+                    <span style="float: right;">1000</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group my-3 mx-3">
+                <input type="submit" name="search" value="Search" class="btn btn-primary">
+              </div>
+
+            </form>
+        </section>
 
         <!-- Featured Section-->
     <section id="featured" class="my-5 py-5">
