@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #000;
 }
 
 body {
@@ -432,6 +433,7 @@ footer .copyright img{
 }
 .cart .product-info p{
   margin: 3px;
+  color: #000;
 }
 
 .cart-total{
@@ -592,4 +594,10 @@ th:last-child{
 
 #contact span{
   color: #fb774b;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    font-weight: 600;
 }
