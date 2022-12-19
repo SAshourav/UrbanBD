@@ -101,6 +101,9 @@ $products = $stmt->get_result();  //array
 
         <!--Shop-->
 
+        <!-- Search Section-->
+
+        <!-- Featured Section-->
     <section id="featured" class="my-5 py-5">
         <div class="container mt-5 py-5">
           <h3>Our Products</h3>
