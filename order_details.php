@@ -2,14 +2,15 @@
 
 include('server/connection.php');
 
-if(isset($_GET['order_details_btn']) && isset($_GET['order_id'])){
-    $order_id = $_GET['order_id'];
+if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
+    $order_id = $_POST['order_id'];
     $stmt = $conn->prepare("SELECT * FROM order_items WHERE order_id = ?");
     $stmt->bind_param('i', $order_id);
     $stmt->execute();
     $order_details = $stmt->get_result();
 }else{
-    
+    header('location: account.php');
+    exit;
 }
 
 ?>
@@ -95,38 +96,38 @@ if(isset($_GET['order_details_btn']) && isset($_GET['order_id'])){
           <hr class="mx-auto">
       </div>
 
-      <table class="mt-5 pt-5">
+      <table class="mt-5 pt-5 mx-auto">
           <tr>
               <th>Product</th>
               <th>Price</th>
               <th>Quantity</th>
           </tr>
+
+          <?php while($row = $order_details->fetch_assoc()){ ?>
          
                   <tr>
                       <td>
                           <div class="product-info">
-                           <img src="assets/imgs/Featured1.jpg">
+                           <img src="assets/imgs/<?php echo $row['product_image'];?>"/>
                             <div>
-                              <p class="mt-3"></p>
+                              <p class="mt-3"><?php echo $row['product_name']; ?></p>
                             </div>
                           </div>
                           
                       </td>
                       <td>
-                        <span></span>
+                        <span><?php echo $row['product_price'];?>Tk</span>
                       </td>
                       <td>
-                        <span></span>
+                        <span><?php echo $row['product_quantity'];?></span>
                       </td>          
                       
                       
-                      <td>
-                        <form>
-                          <input class="btn order-details-btn" type="submit" value="details"/>
-                        </form>
-                      </td>
+                      
 
-                  </tr>    
+                  </tr>  
+                  
+                  <?php } ?>
                   
                
       </table>
