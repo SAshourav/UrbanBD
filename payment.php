@@ -21,18 +21,27 @@ if(isset($_POST['order_pay_btn'])){
             <hr class="mx-auto">
         </div>
         <div class="mx-auto container text-center">
-            
-            <p>Total Payable Amount: $<?php if(isset($_SESSION['total'])){ echo $_SESSION['total']; } ?></p>
-            <?php if(isset($_SESSION['total']) && $_SESSION['total'] != 0 ) { ?>
-            <input class="btn btn-primary" value="Pay Now" type="submit" />
-            <?php } ?>
 
-            <p><?php if(isset($_POST['order_status'])){echo $_POST['order_status'];}  ?></p>
-            <?php if(isset($_POST['order_status']) && $_POST['order_status'] == "not paid") { ?>
+
+        <?php if(isset($_SESSION['total']) && $_SESSION['total'] != 0){?>
+            <p>Total Payable Amount: $<?php echo $_SESSION['total']; ?> </p>
             <input class="btn btn-primary" value="Pay Now" type="submit" />
+
+
+<?php } else if(isset($_POST['order_status']) && $_POST['order_status'] == "not paid"){ ?>
+            <p>Total Payable Amount: $<?php echo $_POST['order_total_price']; ?></p>
+            <input class="btn btn-primary" value="Pay Now" type="submit" />
+
+
             <?php } else { ?>
                 <p> You didn't order anything </p>
-            <?php } ?>
+                <?php } ?>
+
+
+
+
+            
+            
 
         </div>
     </section> 

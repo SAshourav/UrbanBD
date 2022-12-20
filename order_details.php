@@ -27,7 +27,7 @@ function calculateTotalOrderPrice($order_details){
 
   $total = 0;
 
-  while($row = $order_details->fetch_assoc()){
+  foreach($row = $order_details as $row){
 
       $product_price = $row['product_price'];
       $product_quantity = $row['product_quantity'];
@@ -61,7 +61,7 @@ function calculateTotalOrderPrice($order_details){
               <th>Quantity</th>
           </tr>
 
-          <?php while($row = $order_details->fetch_assoc()){ ?>
+          <?php foreach($row = $order_details as $row){ ?>
          
                   <tr>
                       <td>
