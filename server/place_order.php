@@ -3,6 +3,11 @@
 session_start();
 include('connection.php');
 
+if(!isset($_SESSION['logged_int'])){
+    header('location: ../checkout.php?message=Please login/register to place an order');
+    exit;
+}
+
 if(isset($_POST['place_order'])){
 
     //get user info from checkout page and add them to the database
@@ -24,7 +29,11 @@ if(isset($_POST['place_order'])){
 
     $stmt->bind_param('isiisss',$order_cost,$order_status,$user_id,$phone,$city,$address,$order_date);
 
-    $stmt->execute();
+    $stmt_status = $stmt->execute();
+    if(!$stmt_status){
+        header('location: index.php');
+        exit;
+    }
 
     //issue new order 
 

@@ -34,7 +34,7 @@ if(isset($_POST['change_password'])){
     header('location: account.php?error=password must be at least 6 characters');
 
     //No errors
-}else{
+  }else{
   $stmt = $conn->prepare("UPDATE users SET user_password=? WHERE user_email=?");
   $stmt->bind_param('ss',md5($password),$user_email);
 
@@ -45,6 +45,7 @@ if(isset($_POST['change_password'])){
     header('location: account.php?error=could not update password');
   }
     
+  }
 }
 
 //Get Orders
