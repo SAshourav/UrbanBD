@@ -2,8 +2,14 @@
 
 session_start();
 include('server/connection.php');
-
 echo "payment successful";
+
+if(isset($_POST['order_pay_bt']) && isset($_POST['order_id'])){
+	$order_id = $_POST['order_id'];
+   	$user_id = $_SESSION['user_id'];
+}
+
+	
 
 
 $val_id=urlencode($_POST['val_id']);
@@ -72,8 +78,10 @@ if($code == 200 && !( curl_errno($handle)))
           $stmt->bind_param('sss', $order_id, $user_id, $tran_id);
 
           //if account was created successfully
-          if($stmt->execute()){
+          if(){
               header('location: account.php?payment Successful');
           }
 
+
+		  
 ?>
